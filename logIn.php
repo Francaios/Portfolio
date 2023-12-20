@@ -2,10 +2,15 @@
 
 session_start();
 
-$adminUsername = getenv('ADMIN_USERNAME');
-$adminPassword = getenv('ADMIN_PASSWORD');
-$admin = getenv('ADMIN');
-$visitor = getenv('VISITOR');
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$adminUsername = $_ENV['ADMIN_USERNAME'];
+$adminPassword = $_ENV['ADMIN_PASSWORD'];
+$admin = $_ENV['ADMIN'];
+$visitor = $_ENV['VISITOR'];
 
 if ($_POST) {
     if (($_POST['username'] == $adminUsername) && ($_POST['password'] == $adminPassword)) {

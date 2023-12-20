@@ -2,8 +2,9 @@
 <?php include("conection.php"); ?>
 <?php
 
-$admin = getenv('ADMIN');
-session_start();
+
+$admin = $_ENV['ADMIN'];
+
 if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
 
     /* Para cargarles en cloudinary
@@ -15,7 +16,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
         ));
         */
     if ($_POST) {
-        
+
         $name = $_POST['name'];
         $description = $_POST['description'];
         $link = $_POST['link'];
@@ -144,86 +145,103 @@ $tecnologiasNombres = array(
     </table>
 </div>
 
-
-
-
-
-<div class="card">
-    <div class="card-header">Nuevo Proyecto</div>
+<div class="card text-white bg-secondary">
     <div class="card-body">
-        <form action="projects.php" method="post" enctype="multipart/form-data">
-            <label for="" class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="name" id="" placeholder="" aria-describedby="fileHelpId" />
-            <br />
-            <label for="" class="form-label">Descripción</label>
-            <input type="text" class="form-control" name="description" id="" placeholder=""
-                aria-describedby="fileHelpId" />
-            <br />
-            <label for="" class="form-label">Link al repositorio</label>
-            <input type="text" class="form-control" name="link" id="" placeholder="" aria-describedby="fileHelpId" />
-            <br />
-            <label for="" class="form-label">Tecnologias y/o herramientas</label>
-            <br />
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="javascript" name="tecnologias[]" />
-                <label class="form-check-label" for="">Javascript</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="node" name="tecnologias[]" />
-                <label class="form-check-label" for="">Node.js</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="react" name="tecnologias[]" />
-                <label class="form-check-label" for="">React.js</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="redux" name="tecnologias[]" />
-                <label class="form-check-label" for="">Redux</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="css" name="tecnologias[]" />
-                <label class="form-check-label" for="">CSS</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="php" name="tecnologias[]" />
-                <label class="form-check-label" for="">PHP</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="sequelize" name="tecnologias[]" />
-                <label class="form-check-label" for="">Sequelize</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="typescript" name="tecnologias[]" />
-                <label class="form-check-label" for="">Typescript</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="laravel" name="tecnologias[]" />
-                <label class="form-check-label" for="">Laravel</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="postgresql" name="tecnologias[]" />
-                <label class="form-check-label" for="">PostgreSQL</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="mysql" name="tecnologias[]" />
-                <label class="form-check-label" for="">MySQL</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="" value="html" name="tecnologias[]" />
-                <label class="form-check-label" for="">HTML</label>
-            </div>
-            <br />
-
-            <button type="submit" class="btn btn-primary btn-sm" value="enviar proyecto">
-            <?php print_r($_SESSION) ?>
-            </button>
-        </form>
+        <input class="form-check-input" type="checkbox" id="showFormCheckbox" onclick="toggleFormVisibility()" />
+        <label class="form-check-label" for="showFormCheckbox">
+            <h4 class="card-title">Mostrar Formulario</h4>
+        </label>
+        <p class="card-text">Solo se pueden subir proyectos si iniciaste sesion con las credenciales de administrador
+        </p>
     </div>
-    <div class="d-grid gap-2 d-md-block">
-    </div>
-    <br />
 </div>
 
+<br />
 
+<div id="projectFormContainer" style="display: none;">
+    <div class="card">
+        <div class="card-header">Nuevo Proyecto</div>
+        <div class="card-body">
+            <form action="projects.php" method="post" enctype="multipart/form-data">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="name" id="" placeholder=""
+                    aria-describedby="fileHelpId" />
+                <br />
+                <label for="" class="form-label">Descripción</label>
+                <input type="text" class="form-control" name="description" id="" placeholder=""
+                    aria-describedby="fileHelpId" />
+                <br />
+                <label for="" class="form-label">Link al repositorio</label>
+                <input type="text" class="form-control" name="link" id="" placeholder=""
+                    aria-describedby="fileHelpId" />
+                <br />
+                <label for="" class="form-label">Tecnologias y/o herramientas</label>
+                <br />
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="javascript" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Javascript</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="node" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Node.js</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="react" name="tecnologias[]" />
+                    <label class="form-check-label" for="">React.js</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="redux" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Redux</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="css" name="tecnologias[]" />
+                    <label class="form-check-label" for="">CSS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="php" name="tecnologias[]" />
+                    <label class="form-check-label" for="">PHP</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="sequelize" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Sequelize</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="typescript" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Typescript</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="laravel" name="tecnologias[]" />
+                    <label class="form-check-label" for="">Laravel</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="postgresql" name="tecnologias[]" />
+                    <label class="form-check-label" for="">PostgreSQL</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="mysql" name="tecnologias[]" />
+                    <label class="form-check-label" for="">MySQL</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="" value="html" name="tecnologias[]" />
+                    <label class="form-check-label" for="">HTML</label>
+                </div>
+                <br />
 
-<?php include("footer.php"); ?>
+                <button type="submit" class="btn btn-primary btn-sm" value="enviar proyecto">
+                    Subir Proyecto
+                </button>
+            </form>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+        </div>
+        <br />
+    </div>
+
+    <script>
+        function toggleFormVisibility() {
+            var formContainer = document.getElementById('projectFormContainer');
+            formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+    <?php include("footer.php"); ?>
