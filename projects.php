@@ -1,5 +1,5 @@
 <?php include("header.php"); ?>
-<?php include("conection.php"); ?>
+<?php include("connection.php"); ?>
 <?php
 
 
@@ -24,11 +24,11 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
 
         $tecnologias = json_encode($tecnologiasArray);
 
-        $objConection = new conection();
+        $objConnection = new connection();
 
         $sql = "INSERT INTO `portfolio` (`name`, `description`, `tecnologias`, `repositorio`) VALUES ('$name', '$description', '$tecnologias', '$link');";
 
-        $objConection->execute($sql);
+        $objConnection->execute($sql);
 
 
         /* Subir las imagenes a un directorio local
@@ -43,9 +43,9 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
         // Mover la imagen al directorio de carga
         if (move_uploaded_file($imagen['tmp_name'], $uploadPath)) {
             // Insertar la información en la base de datos
-            $objConection = new conection();
+            $objConnection = new connection();
             $sql = "INSERT INTO `portfolio` (`name`, `imagen`, `tecnologias`, `repositorio`) VALUES ('$name', '$uploadPath', '$tecnologias', '$link')";
-            $objConection->execute($sql);
+            $objConnection->execute($sql);
         } else {
             echo "Error al subir la imagen.";
         }
@@ -58,17 +58,17 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
 
             $tecnologias = json_encode($tecnologiasArray);
 
-            $objConection = new conection();
+            $objConnection = new connection();
 
             $sql = "INSERT INTO `portfolio` (`name`, `imagen`, `tecnologias`, `repositorio`) VALUES ('$name', '$imagen_url', '$tecnologias', '$link');";
 
-            $objConection->execute($sql);
+            $objConnection->execute($sql);
         */
     }
 }
 
-$objConection = new conection();
-$res = $objConection->request("SELECT * FROM `portfolio` ")
+$objConnection = new connection();
+$res = $objConnection->request("SELECT * FROM `portfolio` ")
     ?>
 
 <?php
