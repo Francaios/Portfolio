@@ -1,5 +1,23 @@
 <?php include("header.php"); ?>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $reason = $_POST["reason"];
+    $anotherContact = $_POST["anotherContact"];
+
+    $to = "donnarif@outlook.com";
+    $subject = "Nuevo mensaje de contacto";
+    $message = "Nombre: $name\nEmail: $email\nEn qué puedo ayudarte: $reason\nMedio de contacto: $anotherContact";
+    mail($to, $subject, $message);
+    echo '<script>alert("Gracias por contactarme te contestare en cuanto pueda");</script>';
+}
+?>
+
+?>
+
 <head>
     <title>Login</title>
     <!-- Required meta tags -->
@@ -19,7 +37,7 @@
 
             <div class="card-header">Contactame</div>
             <div class="card-body">
-                <form action="logIn.php" method="post" onsubmit="return validateForm()">
+                <form action="contact.php" method="post" onsubmit="return validateForm()">
 
                     <div class="mb-3">
                         <label for="" class=".text-primary">Nombre</label>
@@ -45,8 +63,9 @@
                             placeholder="Es opcional, dejalo vacio si quieres que me contacte por email" />
                     </div>
 
+                    <input name="" id="" class="btn btn-success" type="submit" value="Enviar" />
             </div>
-            <input name="" id="" class="btn btn-success" type="submit" value="Enviar" />
+            
 
             </form>
         </div>
