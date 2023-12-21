@@ -24,16 +24,19 @@ session_start();
 <body>
     <br/>
     <div class="container text-center">
-        <div class="row align-items-start">
-            <a class="col-4 btn btn-primary" href="index.php">Inicio</a>
-            <a class="col-4 btn btn-info" href="projects.php">Proyectos</a>
+        <div class="row justify-content-between">
+            <a class="col-3 btn btn-primary" href="index.php">Inicio</a>
+            <a class="col-3 btn btn-info" href="projects.php">Proyectos</a>
+            <a class="col-3 btn btn-secondary" href="contact.php">Contactame</a>
             <?php
             if (isset($_SESSION['user'])) {
-                echo '<a class="col-4 btn btn-danger" href="logOut.php">Cerrar Sesión</a>';
+                echo '<a class="col-2 btn btn-danger" href="logOut.php">Cerrar Sesión</a>';
             } else {
-                echo '<a class="col-4 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
+                echo '<a class="col-2 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
             }
+            
         ?>
+        
         </div>
         </br>
 

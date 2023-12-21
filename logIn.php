@@ -1,11 +1,5 @@
+<?php include("header.php")?>
 <?php
-
-session_start();
-
-require_once __DIR__ . '/vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
@@ -20,6 +14,7 @@ if ($_POST) {
     } else {
         $_SESSION['user'] = $visitor;
     }
+    $_SESSION['username']=$_POST['username'];
     header('location:index.php');
 }
 
@@ -48,7 +43,7 @@ if ($_POST) {
 
             <div class="card-header">Iniciar Sesion</div>
             <div class="card-body">
-                <form action="logIn.php" method="post">
+                <form action="logIn.php" method="post" onsubmit="return validateForm()">
 
                     <div class="mb-3">
                         <label for="" class=".text-primary">Usuario</label>
@@ -70,7 +65,7 @@ if ($_POST) {
                         <br />
                         
                     </div>
-                    <input name="" id="" class="btn btn-success" type="submit" value="Ingresar" />
+                    <input name="" id="" class="btn btn-success" type="submit" value="Ingresar"/>
 
                 </form>
             </div>
@@ -81,11 +76,23 @@ if ($_POST) {
     </div>
 
     <script>
-        function toggleFormVisibility() {
+    function validateForm() {
+        var username = document.getElementsByName('username')[0].value;
+
+        if (username.trim() === '') {
+            alert('Por favor, ingresa tu nombre de usuario o vuelve a Inicio o Proyectos');
+            
+            return false;
+        }
+
+        return true;
+    }
+
+    function toggleFormVisibility() {
             var passwordField = document.getElementById('passwordField');
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
-    </script>
+</script>
 </body>
 
 </html>
