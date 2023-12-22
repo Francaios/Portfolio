@@ -9,8 +9,7 @@
     "rewrites": [
       {
         "source": "/styles.css",
-        "destination": "/styles.css",
-        "headers": { "Content-Type": "text/css" }
+        "destination": "/styles.css"
       }
     ]
   }
