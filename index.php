@@ -4,16 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
+    <title>Redirección al Portfolio</title>
 </head>
 <body>
-    <h1>Bienvenido a Mi Sitio Web</h1>
-
     <script>
-        // Redirige a la página de la API después de un breve retraso (en milisegundos)
-        setTimeout(function() {
-            window.location.href = '/api/index.php';
-        }, 1); // Cambia el valor a la cantidad de milisegundos que desees
+        // Redirige automáticamente a la página de la API
+        window.location.href = '/api/index.php';
     </script>
 </body>
 </html>
