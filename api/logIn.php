@@ -19,7 +19,20 @@ if ($_POST) {
     header('Location:index.php');
 }
 ?>
+<!doctype html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body
+    style="background-image: url('https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262016/background.webp'); background-size: cover; background-repeat: no-repeat;">
+    <br />
     <div class="container">
         <br />
         <div class="card">
@@ -76,3 +89,6 @@ if ($_POST) {
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
     </script>
+</div>
+</body>
+</html>
