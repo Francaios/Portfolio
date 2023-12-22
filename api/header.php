@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="public/styles.css">
 </head>
 
-<body class="bg-image">
+<body>
     <br/>
     <div class="container text-center">
         <div class="row justify-content-between">
