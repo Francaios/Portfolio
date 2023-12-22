@@ -3,6 +3,15 @@
       "api/*.php": {
         "runtime": "vercel-php@0.6.0"
       }
-    }
+    },
+    "routes": [
+      { "src": "/api/connection.php",  "dest": "/api/index.php" },
+      { "src": "/api/contact.php",  "dest": "/api/index.php" },
+      { "src": "/api/footer.php",  "dest": "/api/index.php" },
+      { "src": "/api/header.php",  "dest": "/api/index.php" },
+      { "src": "/api/logIn.php",  "dest": "/api/index.php" },
+      { "src": "/api/logOut.php",  "dest": "/api/index.php" },
+      { "src": "/api/projects.php",  "dest": "/api/index.php" }
+    ]
   }
   
