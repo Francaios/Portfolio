@@ -15,7 +15,7 @@ if ($_POST) {
         $_SESSION['username']=$_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    echo '<script>window.location.href = "index.php";</script>';
+    header('https://donnarifrancisco.vercel.app/api/index.php');;
 }
 
 ?>
