@@ -1,6 +1,5 @@
 <?php include("header.php")?>
 <?php
-session_start();
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
 $admin = $_ENV['ADMIN'];
@@ -15,25 +14,10 @@ if ($_POST) {
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    header('Location: https://donnarifrancisco.vercel.app/api/index.php');
+    header('Location:index.php');
 }
 ?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Login</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-</head>
-
-<body>
     <div class="container">
         <br />
         <div class="card">
@@ -90,6 +74,4 @@ if ($_POST) {
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
     </script>
-</body>
-
-</html>
+<?php include("footer.php");?>

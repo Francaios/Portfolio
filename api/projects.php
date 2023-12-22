@@ -2,7 +2,6 @@
 <?php include("connection.php"); ?>
 <?php
 
-
 $admin = $_ENV['ADMIN'];
 
 if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
@@ -27,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
         $objConnection = new connection();
 
         $sql = "INSERT INTO `portfolio` (`name`, `description`, `tecnologias`, `repositorio`) VALUES ('$name', '$description', '$tecnologias', '$link');";
-        
+
         $objConnection->execute($sql);
 
 
@@ -127,8 +126,8 @@ $tecnologiasNombres = array(
                     </td>
                     <td>
                         <?php foreach ($tecnologiasArray as $tecnologia => $valor) { ?>
-                            <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>" alt="<?php echo $valor; ?>" width="30"
-                                height="30">
+                            <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
+                                alt="<?php echo $valor; ?>" width="30" height="30">
                             <?php echo $tecnologiasNombres[$valor]; ?>
                             <br />
                         <?php } ?>
@@ -237,12 +236,12 @@ $tecnologiasNombres = array(
         </div>
         <br />
     </div>
+</div>
+<script>
+    function toggleFormVisibility() {
+        var formContainer = document.getElementById('projectFormContainer');
+        formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
 
-    <script>
-        function toggleFormVisibility() {
-            var formContainer = document.getElementById('projectFormContainer');
-            formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
-
-    <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>

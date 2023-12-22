@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 print_r($_SESSION);
 ?>
@@ -20,14 +19,14 @@ print_r($_SESSION);
     <br />
     <div class="container text-center">
         <div class="row justify-content-between">
-            <a class="col-3 btn btn-primary" href="https://donnarifrancisco.vercel.app/api/index.php">Inicio</a>
-            <a class="col-3 btn btn-info" href="https://donnarifrancisco.vercel.app/api/projects.php">Proyectos</a>
-            <a class="col-3 btn btn-secondary" href="https://donnarifrancisco.vercel.app/api/contact.php">Contactame</a>
+            <a class="col-3 btn btn-primary" href="index.php">Inicio</a>
+            <a class="col-3 btn btn-info" href="projects.php">Proyectos</a>
+            <a class="col-3 btn btn-secondary" href="contact.php">Contactame</a>
             <?php
             if (isset($_SESSION['user'])) {
-                echo '<a class="col-2 btn btn-danger" href="https://donnarifrancisco.vercel.app/api/logOut.php">Cerrar Sesión</a>';
+                echo '<a class="col-2 btn btn-danger" href="logOut.php">Cerrar Sesión</a>';
             } else {
-                echo '<a class="col-2 btn btn-primary" href="https://donnarifrancisco.vercel.app/api/logIn.php">Iniciar Sesión</a>';
+                echo '<a class="col-2 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
             }
 
             ?>

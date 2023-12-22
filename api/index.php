@@ -1,5 +1,4 @@
 <?php include("header.php");
-session_start();
 ?>
 
 <div class="row align-items-md-stretch">
@@ -13,7 +12,5 @@ session_start();
 
     </div>
 </div>
-
-
 
 <?php include("footer.php"); ?>
