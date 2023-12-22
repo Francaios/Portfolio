@@ -8,13 +8,13 @@ $visitor = $_ENV['VISITOR'];
 
 if ($_POST) {
     if (($_POST['username'] == $adminUsername) && ($_POST['password'] == $adminPassword)) {
-
+        $_SESSION['username']=$_POST['username'];
         $_SESSION['user'] = $admin;
 
     } else {
+        $_SESSION['username']=$_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    $_SESSION['username']=$_POST['username'];
     header('location:index.php');
 }
 
