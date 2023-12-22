@@ -15,7 +15,7 @@ if ($_POST) {
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    header('https://donnarifrancisco.vercel.app/api/index.php');
+    header('Location: https://donnarifrancisco.vercel.app/api/index.php');
 }
 ?>
 
