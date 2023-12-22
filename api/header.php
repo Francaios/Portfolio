@@ -25,9 +25,9 @@ session_start();
             <a class="col-3 btn btn-secondary" href="https://donnarifrancisco.vercel.app/api/contact.php">Contactame</a>
             <?php
             if (isset($_SESSION['user'])) {
-                echo '<a class="col-2 btn btn-danger" href="logOut.php">Cerrar Sesión</a>';
+                echo '<a class="col-2 btn btn-danger" href="https://donnarifrancisco.vercel.app/api/logOut.php">Cerrar Sesión</a>';
             } else {
-                echo '<a class="col-2 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
+                echo '<a class="col-2 btn btn-primary" href="https://donnarifrancisco.vercel.app/api/logIn.php">Iniciar Sesión</a>';
             }
             
         ?>
