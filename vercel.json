@@ -5,11 +5,17 @@
     }
   },
   "routes": [
-    { "src": "/api/styles.css", "dest": "/api/styles.css" },
-    { "src": "/public/(.*)", "dest": "/$1" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.+\\.(?!php)[^/]+)$", "dest": "/$1" },
+    { "src": "/(.+\\.(?!php)[^/]+)$", "dest": "/api/$1" }, 
     { "src": "/(.*)", "dest": "/api/index.php" }
+  ],
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/public/**/*", 
+      "use": "@vercel/static"
+    }
   ]
 }
+
 
