@@ -1,4 +1,4 @@
-<?php include("header.php")?>
+<?php include("header.php") ?>
 <?php
 
 $adminUsername = $_ENV['ADMIN_USERNAME'];
@@ -8,18 +8,16 @@ $visitor = $_ENV['VISITOR'];
 
 if ($_POST) {
     if (($_POST['username'] == $adminUsername) && ($_POST['password'] == $adminPassword)) {
-        $_SESSION['username']=$_POST['username'];
+        $_SESSION['username'] = $_POST['username'];
         $_SESSION['user'] = $admin;
 
     } else {
-        $_SESSION['username']=$_POST['username'];
+        $_SESSION['username'] = $_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    header('https://donnarifrancisco.vercel.app/api/index.php');;
+    header('https://donnarifrancisco.vercel.app/api/index.php');
 }
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -62,9 +60,9 @@ if ($_POST) {
                         <input type="password" class="form-control" name="password" id="" aria-describedby="helpId"
                             placeholder="" />
                         <br />
-                        
+
                     </div>
-                    <input name="" id="" class="btn btn-success" type="submit" value="Ingresar"/>
+                    <input name="" id="" class="btn btn-success" type="submit" value="Ingresar" />
 
                 </form>
             </div>
@@ -75,23 +73,23 @@ if ($_POST) {
     </div>
 
     <script>
-    function validateForm() {
-        var username = document.getElementsByName('username')[0].value;
+        function validateForm() {
+            var username = document.getElementsByName('username')[0].value;
 
-        if (username.trim() === '') {
-            alert('Por favor, ingresa tu nombre de usuario o vuelve a Inicio o Proyectos');
-            
-            return false;
+            if (username.trim() === '') {
+                alert('Por favor, ingresa tu nombre de usuario o vuelve a Inicio o Proyectos');
+
+                return false;
+            }
+
+            return true;
         }
 
-        return true;
-    }
-
-    function toggleFormVisibility() {
+        function toggleFormVisibility() {
             var passwordField = document.getElementById('passwordField');
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
-</script>
+    </script>
 </body>
 
 </html>

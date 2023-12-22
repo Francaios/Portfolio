@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 print_r($_SESSION);
@@ -15,9 +15,9 @@ print_r($_SESSION);
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body style="background-image: url('https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262016/background.webp'); background-size: cover; background-repeat: no-repeat;"
->
-    <br/>
+<body
+    style="background-image: url('https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262016/background.webp'); background-size: cover; background-repeat: no-repeat;">
+    <br />
     <div class="container text-center">
         <div class="row justify-content-between">
             <a class="col-3 btn btn-primary" href="https://donnarifrancisco.vercel.app/api/index.php">Inicio</a>
@@ -29,10 +29,8 @@ print_r($_SESSION);
             } else {
                 echo '<a class="col-2 btn btn-primary" href="https://donnarifrancisco.vercel.app/api/logIn.php">Iniciar Sesión</a>';
             }
-            
-        ?>
-        
+
+            ?>
+
         </div>
         </br>
-
-        
