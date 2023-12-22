@@ -15,7 +15,7 @@ session_start();
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body style="background-image: url('../public/background.jpg');"
+<body style="background-image: url('https://i.blogs.es/ceda9c/dalle/1366_2000.jpg');"
 >
     <br/>
     <div class="container text-center">
