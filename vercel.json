@@ -7,6 +7,7 @@
     "routes": [
         { "src": "/api/(.*\\.php)", "dest": "/api/$1", "check": true },
         { "src": "/api/(.*)", "dest": "/api/index.php" },
+        { "src": "/(.+\\.(?!css$)[^/]+)$", "dest": "/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ]
   }
