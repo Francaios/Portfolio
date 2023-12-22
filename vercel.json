@@ -5,5 +5,13 @@
     "routes": [
       { "src": "/api/(.*)", "dest": "api/index.php" },
       { "src": "/(.*)", "dest": "api/index.php" }
+    ],
+    "rewrites": [
+      {
+        "source": "/styles.css",
+        "destination": "/styles.css",
+        "headers": { "Content-Type": "text/css" }
+      }
     ]
   }
+  

@@ -3,3 +3,7 @@
 node_modules/
 
 /vendor/
+
+composer.json
+
+compose.lock
