@@ -1,8 +1,8 @@
-<?php include("header.php");
-?>
 <?php
 session_start();
 print_r($_SESSION);
+?>
+<?php include("header.php");
 ?>
 
 <div class="row align-items-md-stretch">

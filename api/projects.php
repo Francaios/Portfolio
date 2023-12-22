@@ -1,9 +1,9 @@
-<?php include("header.php"); ?>
-<?php include("connection.php"); ?>
 <?php
 session_start();
 print_r($_SESSION);
 ?>
+<?php include("header.php"); ?>
+<?php include("connection.php"); ?>
 <?php
 
 $admin = $_ENV['ADMIN'];
