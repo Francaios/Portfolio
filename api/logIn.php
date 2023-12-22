@@ -89,6 +89,5 @@ if ($_POST) {
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
     </script>
-</div>
 </body>
 </html>
