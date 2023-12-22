@@ -126,7 +126,7 @@ $tecnologiasNombres = array(
                     </td>
                     <td>
                         <?php foreach ($tecnologiasArray as $tecnologia => $valor) { ?>
-                            <img src="/public/icons/<?php echo $tecnologiasIconos[$valor]; ?>" alt="<?php echo $valor; ?>" width="30"
+                            <img src="../public/icons/<?php echo $tecnologiasIconos[$valor]; ?>" alt="<?php echo $valor; ?>" width="30"
                                 height="30">
                             <?php echo $tecnologiasNombres[$valor]; ?>
                             <br />
