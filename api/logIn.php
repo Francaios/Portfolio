@@ -15,7 +15,7 @@ if ($_POST) {
         $_SESSION['username']=$_POST['username'];
         $_SESSION['user'] = $visitor;
     }
-    header('location:index.php');
+    echo '<script>window.location.href = "index.php";</script>';
 }
 
 ?>
