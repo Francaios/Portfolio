@@ -1,6 +1,6 @@
-<?php include("header.php") ?>
+<?php include("header.php")?>
 <?php
-
+session_start();
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
 $admin = $_ENV['ADMIN'];

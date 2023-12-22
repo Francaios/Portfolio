@@ -1,4 +1,6 @@
-<?php include("header.php"); ?>
+<?php include("header.php");
+session_start();
+?>
 
 <div class="row align-items-md-stretch">
     <div class="col-md-6">
