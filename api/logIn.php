@@ -1,4 +1,4 @@
-<?php include("header.php")?>
+
 <?php
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
@@ -76,4 +76,3 @@ if ($_POST) {
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
     </script>
-<?php include("footer.php");?>
