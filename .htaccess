@@ -6,3 +6,6 @@
     RewriteRule ^api/(.*)$ api/index.php [L,QSA]
     RewriteRule ^index\.php$ /api/index.php [R=301,L]
 </IfModule>
+<FilesMatch "\.css$">
+    Header set Content-Type text/css
+</FilesMatch>
