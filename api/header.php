@@ -18,6 +18,16 @@ session_start();
             background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
+            height: 100vh; /* Ajusta esto según tus necesidades */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; /* Cambia el color del texto si es necesario */
+        }
+
+        /* Puedes personalizar el estilo del contenido dentro del body según tus necesidades */
+        .container {
+            text-align: center;
         }
     </style>
 </head>
