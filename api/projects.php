@@ -27,7 +27,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
         $objConnection = new connection();
 
         $sql = "INSERT INTO `portfolio` (`name`, `description`, `tecnologias`, `repositorio`) VALUES ('$name', '$description', '$tecnologias', '$link');";
-
+        
         $objConnection->execute($sql);
 
 
@@ -105,6 +105,7 @@ $tecnologiasNombres = array(
 
 <div class="table-responsive">
     <table class="table table-primary">
+        <?php echo "<tr>$res</tr>" ?>
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
