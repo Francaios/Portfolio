@@ -17,7 +17,8 @@ class Connection {
         $this->port = $_ENV['MYSQL_PORT'];
 
         try {
-            $dsn = "mysql:host=$this->host;port=$this->port;dbname=$this->dbname";
+            $dsn = "mysql://root:aBahCHbdGb4dhcHbd5335caaH2FC5e3a@roundhouse.proxy.rlwy.net:54331/railway";
+            
             $this->connection = new PDO($dsn, $this->username, $this->password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {

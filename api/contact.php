@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
-<body style="background-image: url('https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262016/background.webp'); background-size: cover; background-repeat: no-repeat;">
+<body>
     <div class="container">
         <br />
         <div class="card">
