@@ -1,5 +1,5 @@
 <?php include("header.php"); ?>
-
+phpinfo();
 <div class="row align-items-md-stretch">
     <div class="col-md-6">
         <h1 class="text-primary">Bienvenidos a mi Portfolio</h1>
