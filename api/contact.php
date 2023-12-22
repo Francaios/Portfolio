@@ -16,8 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-?>
-
 <head>
     <title>Login</title>
     <!-- Required meta tags -->
