@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -13,11 +13,17 @@ session_start();
     <title>Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://portfolio-9ns5uiika-franciscos-projects-026cca51.vercel.app/styles.css">
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
-    <br/>
+    <br />
     <div class="container text-center">
         <div class="row justify-content-between">
             <a class="col-3 btn btn-primary" href="index.php">Inicio</a>
@@ -29,10 +35,8 @@ session_start();
             } else {
                 echo '<a class="col-2 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
             }
-            
-        ?>
-        
+
+            ?>
+
         </div>
         </br>
-
-        
