@@ -4,4 +4,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^api/(.*)$ api/index.php [L,QSA]
+    RewriteRule ^index\.php$ /api/index.php [R=301,L]
 </IfModule>
