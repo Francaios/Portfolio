@@ -104,7 +104,6 @@ $tecnologiasNombres = array(
 
 <div class="table-responsive">
     <table class="table table-primary">
-        <?php echo "<tr>$res</tr>" ?>
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
