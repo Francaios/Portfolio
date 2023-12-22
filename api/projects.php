@@ -1,6 +1,10 @@
 <?php include("header.php"); ?>
 <?php include("connection.php"); ?>
 <?php
+session_start();
+print_r($_SESSION);
+?>
+<?php
 
 $admin = $_ENV['ADMIN'];
 

@@ -1,5 +1,9 @@
 <?php include("header.php");
 ?>
+<?php
+session_start();
+print_r($_SESSION);
+?>
 
 <div class="row align-items-md-stretch">
     <div class="col-md-6">
