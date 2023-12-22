@@ -1,23 +1,22 @@
-<?php
-session_start();
-print_r($_SESSION);
-?>
 <?php include("header.php")?>
 <?php
-
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
 $admin = $_ENV['ADMIN'];
 $visitor = $_ENV['VISITOR'];
 
 if ($_POST) {
-    if (($_POST['username'] == $adminUsername) && ($_POST['password'] == $adminPassword)) {
-        $_SESSION['user'] = $admin;
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
 
+    if (($username == $adminUsername) && ($password == $adminPassword)) {
+        $_SESSION['username'] = $username;
+        $_SESSION['user'] = $admin;
     } else {
+        $_SESSION['username'] = $username;
         $_SESSION['user'] = $visitor;
     }
-    $_SESSION['username'] = $_POST['username'];
+    header('Location:index.php');
 }
 ?>
 

@@ -1,7 +1,3 @@
-<?php
-session_start();
-print_r($_SESSION);
-?>
 <?php include("header.php"); ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
