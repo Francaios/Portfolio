@@ -6,6 +6,7 @@ $admin = $_ENV['ADMIN'];
 $visitor = $_ENV['VISITOR'];
 
 if ($_POST) {
+    print_r($_POST);
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
@@ -47,14 +48,6 @@ if ($_POST) {
                             placeholder="" />
                     </div>
                     <div class="mb-3">
-                        <input class="form-check-input" type="checkbox" id="showFormCheckbox"
-                            onclick="toggleFormVisibility()" />
-                        <label class="form-check-label" for="showFormCheckbox">
-                            <h4 class="card-title">Confirmar credenciales</h4>
-                        </label>
-                        <p class="card-text">Solo necesario para subir proyectos</p>
-                    </div>
-                    <div class="mb-3" id="passwordField" style="display:none;">
                         <label for="" class=".text-primary">Contraseña</label>
                         <input type="password" class="form-control" name="password" id="" aria-describedby="helpId"
                             placeholder="" />
@@ -70,7 +63,23 @@ if ($_POST) {
 
 
     </div>
+<?php
+    /*
+    <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" id="showFormCheckbox"
+                            onclick="toggleFormVisibility()" />
+                        <label class="form-check-label" for="showFormCheckbox">
+                            <h4 class="card-title">Confirmar credenciales</h4>
+                        </label>
+                        <p class="card-text">Solo necesario para subir proyectos</p>
+                    </div>
+                    <div class="mb-3" id="passwordField" style="display:none;">
+                        <label for="" class=".text-primary">Contraseña</label>
+                        <input type="password" class="form-control" name="password" id="" aria-describedby="helpId"
+                            placeholder="" />
+                        <br />
 
+                    </div>
     <script>
         function validateForm() {
             var username = document.getElementsByName('username')[0].value;
@@ -88,6 +97,6 @@ if ($_POST) {
             var passwordField = document.getElementById('passwordField');
             passwordField.style.display = (passwordField.style.display == 'none' || passwordField.style.display == '') ? 'block' : 'none';
         }
-    </script>
+    </script> */?>
 </body>
 </html>
