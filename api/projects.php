@@ -1,6 +1,7 @@
 <?php include("header.php"); ?>
 <?php
-$admin = $_ENV["ADMIN"];
+$admin = $_ENV["ADMIN_USERNAME"];
+$adminPassword = $_ENV["ADMIN_PASSWORD"];
 class Project {
     public $name;
     public $description;
@@ -180,7 +181,11 @@ $tecnologiasNombres = array(
                     <label class="form-check-label" for="">HTML</label>
                 </div>
                 <br />
-                <label for="" class="form-label">Credencial de administrador</label>
+                <label for="" class="form-label">Nombre de administrador</label>
+                <input type="text" class="form-control" name="admin" id="" placeholder=""
+                    aria-describedby="fileHelpId" />
+                <br />
+                <label for="" class="form-label">Contraseña de administrador</label>
                 <input type="password" class="form-control" name="password" id="" placeholder=""
                     aria-describedby="fileHelpId" />
                 <br />
