@@ -1,12 +1,4 @@
 <?php
-session_set_cookie_params([
-    'lifetime' => 0, // expira cuando se cierra el navegador
-    'path' => '/', // disponible en todo el dominio
-    'domain' => 'donnarifrancisco.vercel.app', // tu dominio
-    'secure' => true, // solo se envía a través de HTTPS si es true
-    'httponly' => true, // la cookie solo está disponible a través del protocolo HTTP
-    'samesite' => 'None', // permite el envío de cookies a través de solicitudes de sitios cruzados
-]);
 session_start();
 $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
