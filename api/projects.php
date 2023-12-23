@@ -1,5 +1,4 @@
 <?php include("header.php"); ?>
-<?php include("connection.php"); ?>
 <?php
 $admin = $_ENV["ADMIN"];
 class Project {
