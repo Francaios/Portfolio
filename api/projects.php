@@ -1,75 +1,33 @@
 <?php include("header.php"); ?>
 <?php include("connection.php"); ?>
 <?php
-print_r($_SESSION);
+$admin = $_ENV["ADMIN"];
+class Project {
+    public $name;
+    public $description;
 
-$admin = $_ENV['ADMIN'];
+    public $tecnologies=[];
 
-if (isset($_SESSION['user']) && $_SESSION['user'] == $admin) {
+    public $link;
 
-    /* Para cargarles en cloudinary
-        require 'vendor/autoload.php';
-        \Cloudinary::config(array(
-            "cloud_name" => "tu_cloud_name",
-            "api_key" => "tu_api_key",
-            "api_secret" => "tu_api_secret"
-        ));
-        */
+    public function __construct($name, $description, $tecnologies, $link) {
+        $this->name = $name;
+        $this->description = $description;
+        $this->tecnologies = $tecnologies;
+        $this->link = $link;
+    }
+}
+$projects = array();
+if (isset($_POST['password']) && $_POST['password'] == $admin) {
     if ($_POST) {
-
         $name = $_POST['name'];
         $description = $_POST['description'];
         $link = $_POST['link'];
         $tecnologiasArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
-
-        $tecnologias = json_encode($tecnologiasArray);
-
-        $objConnection = new connection();
-
-        $sql = "INSERT INTO `portfolio` (`name`, `description`, `tecnologias`, `repositorio`) VALUES ('$name', '$description', '$tecnologias', '$link');";
-
-        $objConnection->execute($sql);
-
-
-        /* Subir las imagenes a un directorio local
-        $imagen = $_FILES['imagen'];
-
-        // Directorio donde se guardarán las imágenes
-        $uploadDir = 'uploads/';
-
-        // Ruta completa del archivo de imagen
-        $uploadPath = $uploadDir . basename($imagen['name']);
-
-        // Mover la imagen al directorio de carga
-        if (move_uploaded_file($imagen['tmp_name'], $uploadPath)) {
-            // Insertar la información en la base de datos
-            $objConnection = new connection();
-            $sql = "INSERT INTO `portfolio` (`name`, `imagen`, `tecnologias`, `repositorio`) VALUES ('$name', '$uploadPath', '$tecnologias', '$link')";
-            $objConnection->execute($sql);
-        } else {
-            echo "Error al subir la imagen.";
-        }
-        */
-
-        /* Para subirlas a cloudinary
-            $imagen_temporal = $_FILES['imagen']['tmp_name'];
-            $resultado = \Cloudinary\Uploader::upload($imagen_temporal);
-            $imagen_url = $resultado['secure_url'];
-
-            $tecnologias = json_encode($tecnologiasArray);
-
-            $objConnection = new connection();
-
-            $sql = "INSERT INTO `portfolio` (`name`, `imagen`, `tecnologias`, `repositorio`) VALUES ('$name', '$imagen_url', '$tecnologias', '$link');";
-
-            $objConnection->execute($sql);
-        */
+        $projects[] = new Project($name, $description, $tecnologies, $link);
     }
 }
-
-$objConnection = new connection();
-$res = $objConnection->request("SELECT * FROM `portfolio` ")
-    ?>
+?>
 
 <?php
 $tecnologiasIconos = array(
@@ -114,18 +72,17 @@ $tecnologiasNombres = array(
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($res as $row) {
-                $tecnologiasArray = json_decode($row['tecnologias'], true); ?>
+            <?php foreach ($projects as $row) {?>
 
                 <tr class="">
                     <td>
-                        <?php echo $row['name'] ?>
+                        <?php echo $row->name ?>
                     </td>
                     <td>
-                        <?php echo $row['description'] ?>
+                        <?php echo $row->description ?>
                     </td>
                     <td>
-                        <?php foreach ($tecnologiasArray as $tecnologia => $valor) { ?>
+                        <?php foreach ($row->tecnologies as $tecnologia => $valor) { ?>
                             <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
                                 alt="<?php echo $valor; ?>" width="30" height="30">
                             <?php echo $tecnologiasNombres[$valor]; ?>
@@ -134,7 +91,7 @@ $tecnologiasNombres = array(
 
                     </td>
                     <td>
-                        <?php echo $row['repositorio'] ?>
+                        <?php echo $row->repositorio ?>
                     </td>
                 </tr>
             <?php }
@@ -151,8 +108,6 @@ $tecnologiasNombres = array(
         <label class="form-check-label" for="showFormCheckbox">
             <h4 class="card-title">Mostrar Formulario</h4>
         </label>
-        <p class="card-text">Solo se pueden subir proyectos si iniciaste sesion con las credenciales de administrador
-        </p>
     </div>
 </div>
 
@@ -226,7 +181,10 @@ $tecnologiasNombres = array(
                     <label class="form-check-label" for="">HTML</label>
                 </div>
                 <br />
-
+                <label for="" class="form-label">Credencial de administrador</label>
+                <input type="password" class="form-control" name="password" id="" placeholder=""
+                    aria-describedby="fileHelpId" />
+                <br />
                 <button type="submit" class="btn btn-primary btn-sm" value="enviar proyecto">
                     Subir Proyecto
                 </button>

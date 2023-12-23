@@ -1,6 +1,15 @@
 <?php include("header.php"); ?>
 <?php
-print_r($_SESSION);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
+$email = $_ENV['EMAIL'];
+$emailPassword = $_ENV['EMAIL_PASSWORD'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST["name"];
@@ -11,48 +20,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "donnarif@outlook.com";
     $subject = "Nuevo mensaje de contacto";
     $message = "Nombre: $name\nEmail: $email\nEn qué puedo ayudarte: $reason\nMedio de contacto: $anotherContact";
-    mail($to, $subject, $message);
-    echo '<script>alert("Gracias por contactarme te contestare en cuanto pueda");</script>';
+
+    $mail = new PHPMailer;
+    $mail->isSMTP();
+    $mail->Host = 'smtp-mail.outlook.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = $email;
+    $mail->Password = $emailPassword;
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    $mail->setFrom($email, $name);
+    $mail->addAddress($to);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    if ($mail->send()) {
+        echo '<script>alert("Gracias por contactarme, te contestaré en cuanto pueda");</script>';
+    } else {
+        echo '<script>alert("Error al enviar el mensaje, por favor intenta de nuevo más tarde");</script>';
+    }
 }
 ?>
 
 <div class="container">
     <br />
     <div class="card">
-
         <div class="card-header">Contactame</div>
         <div class="card-body">
             <form action="contact.php" method="post" onsubmit="return validateForm()">
-
                 <div class="mb-3">
                     <label for="" class=".text-primary">Nombre</label>
-                    <input type="text" class="form-control" name="name" id="" aria-describedby="helpId"
-                        placeholder="" />
+                    <input type="text" class="form-control" name="name" aria-describedby="helpId" placeholder="" />
                 </div>
                 </br>
                 <div class="mb-3">
                     <label for="" class=".text-primary">Email</label>
-                    <input type="text" class="form-control" name="email" id="" aria-describedby="helpId"
-                        placeholder="" />
+                    <input type="text" class="form-control" name="email" aria-describedby="helpId" placeholder="" />
                 </div>
                 </br>
                 <div class="mb-3">
                     <label for="" class=".text-primary">En que puedo ayudarte</label>
-                    <input type="text" class="form-control" name="reason" id="" aria-describedby="helpId"
-                        placeholder="" />
+                    <input type="text" class="form-control" name="reason" aria-describedby="helpId" placeholder="" />
                 </div>
                 </br>
                 <div class="mb-3">
                     <label for="" class=".text-primary">Medio de Contacto</label>
-                    <input type="text" class="form-control" name="anotherContact" id="" aria-describedby="helpId"
-                        placeholder="Es opcional, dejalo vacio si quieres que me contacte por email" />
+                    <input type="text" class="form-control" name="anotherContact" aria-describedby="helpId"
+                        placeholder="Es opcional, déjalo vacío si quieres que me contacte por email" />
                 </div>
-
-                <input name="" id="" class="btn btn-success" type="submit" value="Enviar" />
+                <input name="" class="btn btn-success" type="submit" value="Enviar" />
+            </form>
         </div>
-
-
-        </form>
     </div>
     <div class="card-footer text-muted"></div>
 </div>
