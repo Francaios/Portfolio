@@ -4,7 +4,7 @@ $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
 $admin = $_ENV['ADMIN'];
 $visitor = $_ENV['VISITOR'];
-print_r($_POST);
+print_r($_SESSION);
 if ($_POST) {
     print_r($_POST);
     $username = isset($_POST['username']) ? $_POST['username'] : '';
