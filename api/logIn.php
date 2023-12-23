@@ -4,7 +4,7 @@ $adminUsername = $_ENV['ADMIN_USERNAME'];
 $adminPassword = $_ENV['ADMIN_PASSWORD'];
 $admin = $_ENV['ADMIN'];
 $visitor = $_ENV['VISITOR'];
-
+print_r($_POST);
 if ($_POST) {
     print_r($_POST);
     $username = isset($_POST['username']) ? $_POST['username'] : '';
@@ -17,7 +17,7 @@ if ($_POST) {
         $_SESSION['username'] = $username;
         $_SESSION['user'] = $visitor;
     }
-    header('Location:index.php');
+    //header('Location:index.php');
 }
 ?>
 <!doctype html>
