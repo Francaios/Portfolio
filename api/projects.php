@@ -18,7 +18,7 @@ class Project {
     }
 }
 $projects = array();
-if (isset($_POST['password']) && $_POST['password'] == $admin) {
+if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset($_POST['admin']) && $_POST['admin'] == $admin) {
     if ($_POST) {
         $name = $_POST['name'];
         $description = $_POST['description'];
