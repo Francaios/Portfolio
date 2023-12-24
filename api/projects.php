@@ -3,7 +3,7 @@
 <?php
 $admin = $_ENV["ADMIN_USERNAME"];
 $adminPassword = $_ENV["ADMIN_PASSWORD"];
-$projectsFile = "../projects.db";
+$projectsFile = "projects.db";
 
 class Project {
     public $name;
