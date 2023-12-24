@@ -1,18 +1,69 @@
 <?php include("header.php"); ?>
-
+<?php
+$tecnologiasIconos = array(
+    'javascript' => 'javascript.png',
+    'node' => 'node.png',
+    'react' => 'react.png',
+    'redux' => 'redux.png',
+    'css' => 'css.png',
+    'php' => 'php.png',
+    'sequelize' => 'sequelize.png',
+    'typescript' => 'typescript.png',
+    'laravel' => 'laravel.png',
+    'postgresql' => 'postgresql.png',
+    'mysql' => 'mysql.png',
+    'html' => 'html.png',
+);
+$tecnologiasNombres = array(
+    'javascript' => 'JavaScript',
+    'node' => 'Node.js',
+    'react' => 'React',
+    'redux' => 'Redux',
+    'css' => 'CSS',
+    'php' => 'PHP',
+    'sequelize' => 'Sequelize',
+    'typescript' => 'TypeScript',
+    'laravel' => 'Laravel',
+    'postgresql' => 'PostgreSQL',
+    'mysql' => 'MySQL',
+    'html' => 'HTML',
+);
+$knowledges = array(
+    "javascript",
+    "typescript",
+    "node",
+    "react",
+    "redux",
+    "html",
+    "css",
+    "sequelize",
+    "postgresql",
+    "php",
+    "mysql",
+);
+?>
 <div class="row align-items-md-stretch">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <h1 class="text-primary">Bienvenidos a mi Portfolio</h1>
         <h3 class="text-secondary">
             ¡Hola! Soy Francisco Donnari, un apasionado desarrollador con formación técnica en electrónica y actualmente estudiando ingeniería informática.
         </h3>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
     <img
-            src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703430370/Donnari-Francisco.png"
+            src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703432345/Donnari-Francisco.png"
             class="img-fluid rounded-top"
             alt=""
         />        
+    </div>
+    <div class="col-md-4">
+    <h2 class="text-secondary">Tengo conocimiento en</h2>
+    <?php foreach ($knowledges as $tecnologia => $valor) { ?>
+                            <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
+                                alt="<?php echo $valor; ?>" width="30" height="30">
+                            <?php echo $tecnologiasNombres[$valor]; ?>
+                            <br />
+                        <?php } ?>
     </div>
 </div>
 
