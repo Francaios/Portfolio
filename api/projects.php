@@ -79,7 +79,7 @@ if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset
 ?>
 
 <div class="table-responsive">
-    <table class="table table-primary">
+    <table class="table table-primary opacity-80">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>

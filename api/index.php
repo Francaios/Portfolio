@@ -34,10 +34,10 @@
             class="img-fluid rounded" alt="" />
         <h2 class="text-white bg-secondary rounded opacity-75">Tengo conocimiento en</h2>
         <?php foreach ($knowledges as $tecnologia => $valor) { ?>
-            <div class="d-inline-block mr-3 mb-3 rounded bg-secondary">
+            <div class="d-inline-block mr-3 mb-3 rounded bg-secondary opacity-80">
                 <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
                     alt="<?php echo $valor; ?>" width="30" height="30" class="img-fluid rounded bg-white">
-                <span class="text-white p-2 rounded ">
+                <span class="text-white p-2 rounded opacity-80">
                     <?php echo $tecnologiasNombres[$valor]; ?>
                 </span>
             </div>

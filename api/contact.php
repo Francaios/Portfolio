@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="container">
     <br />
-    <div class="card">
+    <div class="card opacity-80">
         <div class="card-header">Me contactare lo antes posible</div>
         <div class="card-body">
             <form action="contact.php" method="post" onsubmit="return validateForm()">
