@@ -23,8 +23,8 @@ if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset
         $name = $_POST['name'];
         $description = $_POST['description'];
         $link = $_POST['link'];
-        $tecnologiasArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
-        $projects[] = new Project($name, $description, $tecnologies, $link);
+        $tecnologiesArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
+        $projects[] = new Project($name, $description, $tecnologiesArray, $link);
     }
 }
 ?>
@@ -91,7 +91,7 @@ $tecnologiasNombres = array(
 
                     </td>
                     <td>
-                        <?php echo $row->repositorio ?>
+                        <?php echo $row->link ?>
                     </td>
                 </tr>
             <?php }
