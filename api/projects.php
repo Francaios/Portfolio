@@ -125,13 +125,13 @@ $tecnologiasNombres = array(
 
                 <tr class="">
                     <td>
-                        <?php echo $row->name ?>
+                        <?php echo $row['name']; ?>
                     </td>
                     <td>
-                        <?php echo $row->description ?>
+                        <?php echo $row['description']; ?>
                     </td>
                     <td>
-                        <?php foreach ($row->tecnologies as $tecnologia => $valor) { ?>
+                        <?php foreach ($row['tecnologies'] as $tecnologia => $valor) { ?>
                             <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
                                 alt="<?php echo $valor; ?>" width="30" height="30">
                             <?php echo $tecnologiasNombres[$valor]; ?>
@@ -140,7 +140,7 @@ $tecnologiasNombres = array(
 
                     </td>
                     <td>
-                        <a href="<?php echo $row->link ?>" target="_blank"><?php echo $row->link ?></a>
+                        <a href="<?php echo $row['link']; ?>" target="_blank"><?php echo $row['link']; ?></a>
                     </td>
                 </tr>
             <?php }
