@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $to = "donnarif@outlook.com";
     $subject = "Nuevo mensaje de contacto";
-    $message = "Nombre: $name\nEmail: $email\nEn qué puedo ayudarte: $reason\nMedio de contacto: $anotherContact";
+    $message = "Nombre: $name\nEmail: $email\nAsunto: $reason\nMedio de contacto: $anotherContact";
 
     $mail = new PHPMailer;
 
@@ -66,12 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 </br>
                 <div class="mb-3">
-                    <label for="" class=".text-primary">En que puedo ayudarte</label>
+                    <label for="" class=".text-primary">Asunto</label>
                     <input type="text" class="form-control" name="reason" aria-describedby="helpId" placeholder="" />
                 </div>
                 </br>
                 <div class="mb-3">
-                    <label for="" class=".text-primary">Medio de Contacto</label>
+                    <label for="" class=".text-primary">Medio de Contacto Adicional</label>
                     <input type="text" class="form-control" name="anotherContact" aria-describedby="helpId"
                         placeholder="Es opcional, déjalo vacío si quieres que me contacte por email" />
                 </div>
