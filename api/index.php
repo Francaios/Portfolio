@@ -4,30 +4,34 @@
     <div class="col-md-8">
         <h1 class="text-primary">Bienvenidos a mi Portfolio</h1>
         <div class="row">
-            <div class="col-md-6 bg-secondary rounded">
-                <h3 class="text-info">
-                    ¡Hola! Soy Francisco Donnari, un apasionado desarrollador Fullstack y Back-End con formación de
-                    técnico
-                    en electrónica y actualmente
-                    estudiando ingeniería en informática.
+            <div class="col-md-6 mb-3">
+                <div class="bg-secondary rounded">
+                    <h3 class="text-info">
+                        ¡Hola! Soy Francisco Donnari, un apasionado desarrollador Fullstack y Back-End con formación de
+                        técnico
+                        en electrónica y actualmente
+                        estudiando ingeniería en informática.
 
-                </h3>
+                    </h3>
+                </div>
             </div>
-            <div class="col-md-6 bg-secondary rounded">
-
-                <h3 class="text-info">Busco contribuir al crecimiento de un equipo y aplicar al máximo mis
-                    conocimientos en el desarrollo de software. Estoy emocionado por conectar y explorar oportunidades
-                    para
-                    colaborar en proyectos interesantes. ¡No dudes en contactarme para discutir posibles colaboraciones
-                    o
-                    ideas innovadoras!</h3>
-
+            <div class="col-md-6 mb-3">
+                <div class="bg-secondary rounded">
+                    <h3 class="text-info">Busco contribuir al crecimiento de un equipo y aplicar al máximo mis
+                        conocimientos en el desarrollo de software. Estoy emocionado por conectar y explorar
+                        oportunidades
+                        para
+                        colaborar en proyectos interesantes. ¡No dudes en contactarme para discutir posibles
+                        colaboraciones
+                        o
+                        ideas innovadoras!</h3>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703432345/Donnari-Francisco.png"
-            class="img-fluid rounded bg-secondary" alt="" />
+            class="img-fluid rounded" alt="" />
         <h2 class="text-white bg-secondary rounded">Tengo conocimiento en</h2>
         <?php foreach ($knowledges as $tecnologia => $valor) { ?>
             <div class="d-inline-block mr-3 mb-3 rounded bg-secondary">
