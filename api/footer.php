@@ -1,5 +1,5 @@
 </div>
-<footer style="background-color: #f0f0f0; color: #333; padding: 10px;">
+<footer style="background-color: #f0f0f0; color: #333; padding: 10px; position: absolute; bottom: 0; width: 100%;">
 <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="https://donnarifrancisco.vercel.app/publi/Donnari-Francisco-CV" class="btn btn-success btn-block" download>
+                <a href="https://donnarifrancisco.vercel.app/public/Donnari-Francisco-CV.pdf" class="btn btn-success btn-block" download>
                     Mi CV
                 </a>
             </div>
