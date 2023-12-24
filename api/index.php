@@ -4,7 +4,7 @@
     <div class="col-md-8">
         <h1 class="text-primary">Bienvenidos a mi Portfolio</h1>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <h3 class="text-secondary">
                     ¡Hola! Soy Francisco Donnari, un apasionado desarrollador Fullstack y Back-End con formación de
                     técnico
@@ -13,7 +13,7 @@
 
                 </h3>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
 
                 <h3 class="text-secondary">Busco contribuir al crecimiento de un equipo y aplicar al máximo mis
                     conocimientos en el desarrollo de software. Estoy emocionado por conectar y explorar oportunidades
