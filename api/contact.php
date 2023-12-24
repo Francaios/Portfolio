@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom($email, $name);
+        $mail->setFrom($myEmail, $name);
         $mail->addAddress($to);
         $mail->Subject = $subject;
         $mail->Body = $message;
