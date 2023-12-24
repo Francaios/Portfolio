@@ -1,21 +1,10 @@
-<?php
-session_set_cookie_params([
-    'lifetime' => 0, // expira cuando se cierra el navegador
-    'path' => '/', // disponible en todo el dominio
-    'domain' => 'donnarifrancisco.vercel.app', // tu dominio
-    'secure' => true, // solo se envía a través de HTTPS si es true
-    'httponly' => true, // la cookie solo está disponible a través del protocolo HTTP
-    'samesite' => 'None', // permite el envío de cookies a través de solicitudes de sitios cruzados
-]);
-session_start();
-?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap</title>
+    <title>Donnari Francisco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -28,12 +17,5 @@ session_start();
             <a class="col-3 btn btn-primary" href="index.php">Inicio</a>
             <a class="col-3 btn btn-info" href="projects.php">Proyectos</a>
             <a class="col-3 btn btn-secondary" href="contact.php">Contactame</a>
-            <?php
-            if (isset($_SESSION['user'])) {
-                echo '<a class="col-2 btn btn-danger" href="logOut.php">Cerrar Sesión</a>';
-            } else {
-                echo '<a class="col-2 btn btn-primary" href="logIn.php">Iniciar Sesión</a>';
-            }
-            ?>
         </div>
         </br>
