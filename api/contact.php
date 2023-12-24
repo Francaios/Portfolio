@@ -5,14 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Incluir la clase principal de PHPMailer
-require '../vendor/phpmailer/src/PHPMailer.php';
-
-// Incluir la clase de SMTP si la necesitas
-require '../vendor/phpmailer/src/SMTP.php';
-
-// Incluir la clase de Exception si la necesitas
-require '../vendor/phpmailer/src/Exception.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $myEmail = $_ENV['EMAIL'];
 $emailPassword = $_ENV['EMAIL_PASSWORD'];
