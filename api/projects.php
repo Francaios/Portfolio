@@ -51,7 +51,7 @@ $projects = array(
         "link" => "https://github.com/Francaios/pf-videogames"
     ),
     array(
-        "name" => "Porfolio",
+        "name" => "Portfolio",
         "description" => "Empece a aprender PHP y me parecio una buena forma de practicar hacer mi portfolio con PHP, cuenta con una pagina de inicio donde me presento, una pagina con mis proyectos y por ultimo una pagina donde pueden contactarse conmigo por medio de correo electronico.",
         "tecnologies" => [
             "php",
