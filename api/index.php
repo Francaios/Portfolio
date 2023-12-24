@@ -52,18 +52,19 @@ $knowledges = array(
     <div class="col-md-4">
     <img
             src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703432345/Donnari-Francisco.png"
-            class="img-fluid rounded-top"
+            class="img-fluid rounded-top bg-info"
             alt=""
         />        
     </div>
     <div class="col-md-4">
     <h2 class="text-secondary">Tengo conocimiento en</h2>
     <?php foreach ($knowledges as $tecnologia => $valor) { ?>
+        <div class="d-inline-block mr-3 mb-3">
                             <img src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262003/icons/<?php echo $tecnologiasIconos[$valor]; ?>"
-                                alt="<?php echo $valor; ?>" width="30" height="30">
+                                alt="<?php echo $valor; ?>" width="30" height="30"  class="img-fluid rounded-top bg-info">
                             <?php echo $tecnologiasNombres[$valor]; ?>
-                            <br />
                         <?php } ?>
+    </div>
     </div>
 </div>
 
