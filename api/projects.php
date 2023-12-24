@@ -3,7 +3,7 @@
 <?php
 $admin = $_ENV["ADMIN_USERNAME"];
 $adminPassword = $_ENV["ADMIN_PASSWORD"];
-$projectsFile = "projects.db"; // Nombre del archivo de base de datos SQLite
+$projectsFile = "../projects.db";
 
 class Project {
     public $name;
