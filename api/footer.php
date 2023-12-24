@@ -23,12 +23,18 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="https://drive.google.com/uc?export=download&id=1Ge36GstTFnLsMOvERL2eh1iLpbE8s5XD" class="btn btn-success btn-block" download>
-                    Mi CV
-                </a>
+            <button class="btn btn-success btn-block" onclick="downloadCV()">
+                        <img style="width: 30px; height: auto;" src="https://res.cloudinary.com/ddev9dsdl/image/upload/v1703424858/icons/cv.png" alt="CV Icon" class="img-fluid">
+                        Mi CV
+                    </button>
             </div>
         </div>
     </div>
 </footer>
+<script>
+        function downloadCV() {
+            window.location.href = 'https://drive.google.com/uc?export=download&id=1Ge36GstTFnLsMOvERL2eh1iLpbE8s5XD';
+        }
+    </script>
 </body>
 </html>
