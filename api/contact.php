@@ -22,26 +22,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = "Nombre: $name\nEmail: $email\nEn qué puedo ayudarte: $reason\nMedio de contacto: $anotherContact";
 
     $mail = new PHPMailer;
-    $mail->isSMTP();
-    $mail->Host = 'smtp-mail.outlook.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = $myEmail;
-    $mail->Password = $emailPassword;
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
 
-    $mail->setFrom($email, $name);
-    $mail->addAddress($to);
-    $mail->Subject = $subject;
-    $mail->Body = $message;
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp-mail.outlook.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $myEmail;
+        $mail->Password = $emailPassword;
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
 
-    if ($mail->send()) {
-        echo '<script>alert("Gracias por contactarme, te contestaré en cuanto pueda");</script>';
-    } else {
-        echo '<script>alert("Error al enviar el mensaje, por favor intenta de nuevo más tarde");</script>';
+        $mail->setFrom($email, $name);
+        $mail->addAddress($to);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        if ($mail->send()) {
+            echo '<script>alert("Gracias por contactarme, te contestaré en cuanto pueda");</script>';
+        } else {
+            throw new Exception($mail->ErrorInfo);
+        }
+    } catch (Exception $e) {
+        echo '<script>alert("Error al enviar el mensaje: ' . $e->getMessage() . '");</script>';
     }
 }
 ?>
+
 
 <div class="container">
     <br />
