@@ -1,5 +1,5 @@
 </div>
-<footer style=" padding: 10px; position: relative; bottom: 0; width: 100%;">
+<footer style=" padding: 10px; position: sticky; bottom: 0; width: 100%;">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
