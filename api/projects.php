@@ -24,7 +24,7 @@ $projects = array();
 // Cargar proyectos desde el archivo JSON si existe
 if (file_exists($projectsFile)) {
     $projectsData = file_get_contents($projectsFile);
-    $projects = json_decode($projectsData);
+    $projects = json_decode($projectsData, true);
 }
 
 if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset($_POST['admin']) && $_POST['admin'] == $admin) {
