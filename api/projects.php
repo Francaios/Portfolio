@@ -91,7 +91,7 @@ $tecnologiasNombres = array(
 
                     </td>
                     <td>
-                        <?php echo $row->link ?>
+                        <a href="<?php echo $row->link ?>" target="_blank"><?php echo $row->link ?></a>
                     </td>
                 </tr>
             <?php }
