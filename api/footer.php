@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <a href="https://drive.google.com/file/d/1Ge36GstTFnLsMOvERL2eh1iLpbE8s5XD/view?usp=drive_link" class="btn btn-success btn-block" download>
+                <a href="https://drive.google.com/uc?export=download&id=1Ge36GstTFnLsMOvERL2eh1iLpbE8s5XD" class="btn btn-success btn-block" download>
                     Mi CV
                 </a>
             </div>
