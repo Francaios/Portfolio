@@ -1,13 +1,14 @@
 <?php include("header.php"); ?>
+
 <?php
 $admin = $_ENV["ADMIN_USERNAME"];
 $adminPassword = $_ENV["ADMIN_PASSWORD"];
+$projectsFile = "../projects.json";
+
 class Project {
     public $name;
     public $description;
-
-    public $tecnologies=[];
-
+    public $tecnologies = [];
     public $link;
 
     public function __construct($name, $description, $tecnologies, $link) {
@@ -17,14 +18,26 @@ class Project {
         $this->link = $link;
     }
 }
+
 $projects = array();
+
+// Cargar proyectos desde el archivo JSON si existe
+if (file_exists($projectsFile)) {
+    $projectsData = file_get_contents($projectsFile);
+    $projects = json_decode($projectsData);
+}
+
 if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset($_POST['admin']) && $_POST['admin'] == $admin) {
     if ($_POST) {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $link = $_POST['link'];
         $tecnologiesArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
-        $projects[] = new Project($name, $description, $tecnologiesArray, $link);
+        $newProject = new Project($name, $description, $tecnologiesArray, $link);
+        $projects[] = $newProject;
+
+        // Guardar proyectos en el archivo JSON
+        file_put_contents($projectsFile, json_encode($projects));
     }
 }
 ?>
