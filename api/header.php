@@ -16,6 +16,6 @@
         <div class="row justify-content-between">
             <a class="col-3 btn btn-primary" href="index.php">Inicio</a>
             <a class="col-3 btn btn-info" href="projects.php">Proyectos</a>
-            <a class="col-3 btn btn-secondary" href="contact.php">Contactame</a>
+            <a class="col-3 btn btn-secondary" href="contact.php">Tienes alguna duda?</a>
         </div>
         </br>

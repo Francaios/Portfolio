@@ -13,13 +13,13 @@ $emailPassword = $_ENV['EMAIL_PASSWORD'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST["name"];
-    $email = $_POST["email"];
+    $contact = $_POST["contact"];
     $reason = $_POST["reason"];
     $anotherContact = $_POST["anotherContact"];
 
     $to = "donnarif@outlook.com";
     $subject = "Nuevo mensaje de contacto";
-    $message = "Nombre: $name\nEmail: $email\nAsunto: $reason\nMedio de contacto: $anotherContact";
+    $message = "Nombre: $name\nContacto: $contact\nAsunto: $reason";
 
     $mail = new PHPMailer;
 
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
     <br />
     <div class="card">
-        <div class="card-header">Contactame</div>
+        <div class="card-header">Me contactare lo antes posible</div>
         <div class="card-body">
             <form action="contact.php" method="post" onsubmit="return validateForm()">
                 <div class="mb-3">
@@ -61,8 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 </br>
                 <div class="mb-3">
-                    <label for="" class=".text-primary">Email</label>
-                    <input type="text" class="form-control" name="email" aria-describedby="helpId" placeholder="" />
+                    <label for="" class=".text-primary">Forma de Contacto</label>
+                    <input type="text" class="form-control" name="contact" aria-describedby="helpId" placeholder="Podes poner el medio de contacto que prefieras" />
                 </div>
                 </br>
                 <div class="mb-3">
@@ -70,11 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" class="form-control" name="reason" aria-describedby="helpId" placeholder="" />
                 </div>
                 </br>
-                <div class="mb-3">
-                    <label for="" class=".text-primary">Medio de Contacto Adicional</label>
-                    <input type="text" class="form-control" name="anotherContact" aria-describedby="helpId"
-                        placeholder="Es opcional, déjalo vacío si quieres que me contacte por email" />
-                </div>
                 <input name="" class="btn btn-success" type="submit" value="Enviar" />
             </form>
         </div>
@@ -85,18 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     function validateForm() {
         var name = document.getElementsByName('name')[0].value;
-        var email = document.getElementsByName('email')[0].value;
+        var email = document.getElementsByName('contact')[0].value;
         var reason = document.getElementsByName('reason')[0].value;
 
         if (name.trim() === '' || email.trim() === '' || reason.trim() === '') {
             alert('Por favor, completa todos los campos obligatorios');
-            return false;
-        }
-
-        // Email validation
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Por favor, ingresa un correo electrónico válido');
             return false;
         }
 
