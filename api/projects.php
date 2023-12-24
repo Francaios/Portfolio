@@ -78,38 +78,6 @@ if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset
 }
 ?>
 
-<?php
-$tecnologiasIconos = array(
-    'javascript' => 'javascript.png',
-    'node' => 'node.png',
-    'react' => 'react.png',
-    'redux' => 'redux.png',
-    'css' => 'css.png',
-    'php' => 'php.png',
-    'sequelize' => 'sequelize.png',
-    'typescript' => 'typescript.png',
-    'laravel' => 'laravel.png',
-    'postgresql' => 'postgresql.png',
-    'mysql' => 'mysql.png',
-    'html' => 'html.png',
-);
-$tecnologiasNombres = array(
-    'javascript' => 'JavaScript',
-    'node' => 'Node.js',
-    'react' => 'React',
-    'redux' => 'Redux',
-    'css' => 'CSS',
-    'php' => 'PHP',
-    'sequelize' => 'Sequelize',
-    'typescript' => 'TypeScript',
-    'laravel' => 'Laravel',
-    'postgresql' => 'PostgreSQL',
-    'mysql' => 'MySQL',
-    'html' => 'HTML',
-);
-?>
-
-
 <div class="table-responsive">
     <table class="table table-primary">
         <thead>
