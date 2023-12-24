@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Proyecto Individual Dogs",
+        "description": "Para el bootcamp de desarrollador Full Stack de Henry cree una Single Page Application sobre razas de perros que permitia: visualizar las razas traidas desde una Api, realizar busquedas, filtros y ordenamientos y ademas un formulario controlado que permitia crear una raza de perro nueva para añadir a la pagina.",
+        "tecnologies": [
+            "javascript",
+            "node",
+            "react",
+            "redux",
+            "html",
+            "css",
+            "sequelize",
+            "postgresql"
+
+        ],
+        "link": "https://github.com/Francaios/Dogs"
+    },
+    {
+        "name": "Proyecto Grupal Videogame Store",
+        "description": "Para dar por completado el bootcamp de Henry realizamos una ultima tarea en grupo que constaba de realizar el diseño y desarrollo de una App Ecommerce de videojuegos que incluye: búsqueda de videojuegos (por nombre, con filtrado y ordenamiento), comprar y regalar videojuegos, agregar juegos a favoritos y chatear con amigos.",
+        "tecnologies": [
+            "javascript",
+            "node",
+            "react",
+            "redux",
+            "html",
+            "css",
+            "sequelize",
+            "postgresql"
+        ],
+        "link": "https://github.com/Francaios/pf-videogames"
+    },
+    {
+        "name": "Porfolio",
+        "description": "Empece a aprender PHP y me parecio una buena forma de practicar hacer mi portfolio con PHP, cuenta con una pagina de inicio donde me presento, una pagina con mis proyectos y por ultimo una pagina donde pueden contactarse conmigo por medio de correo electronico.",
+        "tencologie": [
+            "php",
+            "javascript",
+            "html",
+            "css"
+        ],
+        "link":"https://github.com/Francaios/Portfolio"
+    }
+]
