@@ -5,9 +5,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php';
+// Incluir la clase principal de PHPMailer
+require '../vendor/phpmailer/src/PHPMailer.php';
 
-$email = $_ENV['EMAIL'];
+// Incluir la clase de SMTP si la necesitas
+require '../vendor/phpmailer/src/SMTP.php';
+
+// Incluir la clase de Exception si la necesitas
+require '../vendor/phpmailer/src/Exception.php';
+
+$myEmail = $_ENV['EMAIL'];
 $emailPassword = $_ENV['EMAIL_PASSWORD'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->isSMTP();
     $mail->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;
-    $mail->Username = $email;
+    $mail->Username = $myEmail;
     $mail->Password = $emailPassword;
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;

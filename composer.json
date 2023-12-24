@@ -1,14 +1,6 @@
 {
-    "scripts": {
-        "vercel-build": "composer install && rm -rf /vercel/path0/vendor && vercel build"
-    },
     "require": {
         "phpmailer/phpmailer": "^6.9"
-    },
-    "autoload": {
-        "psr-4": {
-            "MiNamespace\\": "src/"
-        }
     }
 }
 

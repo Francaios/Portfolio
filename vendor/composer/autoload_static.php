@@ -11,20 +11,12 @@ class ComposerStaticInitbaf0b1b659e688a64051c5ee9742a77e
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'M' => 
-        array (
-            'MiNamespace\\' => 12,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
-        'MiNamespace\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
