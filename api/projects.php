@@ -3,7 +3,7 @@
 <?php
 $admin = $_ENV["ADMIN_USERNAME"];
 $adminPassword = $_ENV["ADMIN_PASSWORD"];
-$projectsFile = "../projects.json";
+$projectsFile = "projects.db"; // Nombre del archivo de base de datos SQLite
 
 class Project {
     public $name;
@@ -19,26 +19,35 @@ class Project {
     }
 }
 
-$projects = array();
+// Crear o abrir la base de datos SQLite
+$db = new SQLite3($projectsFile);
 
-// Cargar proyectos desde el archivo JSON si existe
-if (file_exists($projectsFile)) {
-    $projectsData = file_get_contents($projectsFile);
-    $projects = json_decode($projectsData);
+// Crear la tabla si no existe
+$db->exec('CREATE TABLE IF NOT EXISTS projects (name TEXT, description TEXT, tecnologies TEXT, link TEXT)');
+
+// Obtener proyectos desde la base de datos
+$result = $db->query('SELECT * FROM projects');
+$projects = [];
+while ($row = $result->fetchArray()) {
+    $projects[] = new Project($row['name'], $row['description'], json_decode($row['tecnologies']), $row['link']);
 }
 
-if ((isset($_POST['password']) && $_POST['password'] == $adminPassword) && isset($_POST['admin']) && $_POST['admin'] == $admin) {
-    if ($_POST) {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $link = $_POST['link'];
-        $tecnologiesArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
-        $newProject = new Project($name, $description, $tecnologiesArray, $link);
-        $projects[] = $newProject;
+if ($_POST && isset($_POST['password']) && $_POST['password'] == $adminPassword && isset($_POST['admin']) && $_POST['admin'] == $admin) {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $link = $_POST['link'];
+    $tecnologiesArray = isset($_POST['tecnologias']) ? $_POST['tecnologias'] : array();
 
-        // Guardar proyectos en el archivo JSON
-        file_put_contents($projectsFile, json_encode($projects));
-    }
+    // Insertar nuevo proyecto en la base de datos
+    $stmt = $db->prepare('INSERT INTO projects (name, description, tecnologies, link) VALUES (:name, :description, :tecnologies, :link)');
+    $stmt->bindValue(':name', $name, SQLITE3_TEXT);
+    $stmt->bindValue(':description', $description, SQLITE3_TEXT);
+    $stmt->bindValue(':tecnologies', json_encode($tecnologiesArray), SQLITE3_TEXT);
+    $stmt->bindValue(':link', $link, SQLITE3_TEXT);
+    $stmt->execute();
+
+    // Actualizar la lista de proyectos
+    $projects[] = new Project($name, $description, $tecnologiesArray, $link);
 }
 ?>
 
