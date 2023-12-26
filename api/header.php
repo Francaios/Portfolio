@@ -58,6 +58,8 @@ $knowledges = array(
         <div class="row justify-content-between align-items-center">
             <a class="col-3 btn btn-primary opacity-80 d-flex align-items-center" href="index.php">Inicio</a>
             <a class="col-3 btn btn-info opacity-80 d-flex align-items-center" href="projects.php">Proyectos</a>
-            <a class="col-3 btn btn-secondary opacity-80 d-flex align-items-center" href="contact.php">Tienes alguna duda?</a>
+            <a class="col-3 btn btn-secondary opacity-80 d-flex align-items-center" href="contact.php">Tienes alguna
+                duda?</a>
         </div>
-        </br>
+    </div>
+    </br>
