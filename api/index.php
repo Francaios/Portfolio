@@ -6,25 +6,26 @@
 
 
         <div class="bg-secondary rounded opacity-75">
-            <h3 class="text-info">
+            <h4 class="text-info">
                 Un apasionado desarrollador Fullstack | Back-End con formación de
                 técnico
                 en electrónica y actualmente
                 estudiando ingeniería en informática.
 
-            </h3>
+            </h4>
         </div>
 
 
         <div class="bg-secondary rounded opacity-75">
-            <h3 class="text-info">Busco contribuir al crecimiento de un equipo y aplicar al máximo mis
+            <h4 class="text-info">Busco contribuir al crecimiento de un equipo y aplicar al máximo mis
                 conocimientos en el desarrollo de software. Estoy emocionado por conectar y explorar
                 oportunidades
                 para
                 colaborar en proyectos interesantes. ¡No dudes en contactarme para discutir posibles
                 colaboraciones
                 o
-                ideas innovadoras!</h3>
+                ideas innovadoras!
+            </h4>
         </div>
 
 
