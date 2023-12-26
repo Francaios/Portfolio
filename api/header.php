@@ -56,9 +56,9 @@ $knowledges = array(
     <br />
     <div class="container text-center">
         <div class="row justify-content-between align-items-center">
-            <a class="col-3 btn btn-primary d-flex align-items-center text-align: center;" href="index.php">Inicio</a>
-            <a class="col-3 btn btn-info d-flex align-items-center text-align: center;" href="projects.php">Proyectos</a>
-            <a class="col-3 btn btn-secondary d-flex align-items-center text-align: center;" href="contact.php">Tienes alguna
+            <a class="col-3 btn btn-primary d-flex align-items-center text-center;" href="index.php">Inicio</a>
+            <a class="col-3 btn btn-info d-flex align-items-center text-center;" href="projects.php">Proyectos</a>
+            <a class="col-3 btn btn-secondary d-flex align-items-center text-center;" href="contact.php">Tienes alguna
                 duda?</a>
         </div>
     </br>
