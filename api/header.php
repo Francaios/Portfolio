@@ -55,9 +55,9 @@ $knowledges = array(
     style="background-image: url('https://res.cloudinary.com/ddev9dsdl/image/upload/v1703262016/background.webp'); background-size: cover; background-repeat: no-repeat;">
     <br />
     <div class="container text-center">
-        <div class="row justify-content-between">
-            <a class="col-3 btn btn-primary opacity-80 text-center" href="index.php">Inicio</a>
-            <a class="col-3 btn btn-info opacity-80 text-center" href="projects.php">Proyectos</a>
-            <a class="col-3 btn btn-secondary opacity-80 text-center" href="contact.php">Tienes alguna duda?</a>
+        <div class="row justify-content-between align-items-center">
+            <a class="col-3 btn btn-primary opacity-80 d-flex align-items-center" href="index.php">Inicio</a>
+            <a class="col-3 btn btn-info opacity-80 d-flex align-items-center" href="projects.php">Proyectos</a>
+            <a class="col-3 btn btn-secondary opacity-80 d-flex align-items-center" href="contact.php">Tienes alguna duda?</a>
         </div>
         </br>
