@@ -42,7 +42,7 @@
 </footer>
 <script>
     function downloadCV() {
-        window.location.href = 'https://drive.google.com/uc?export=download&id=1UHOEspSXCaxN1wGSMsDrkaMVsIKyzQNo';
+        window.location.href = 'https://drive.google.com/uc?export=download&id=13plFThDlfWOwh4gjwvkz_JmObnu3Sb3J';
     }
 </script>
 </body>
